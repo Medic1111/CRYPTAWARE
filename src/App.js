@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import Chart from "./components/Chart/Chart";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Options from "./components/Options/Options";
 import Selection from "./components/Selection/Selection";
 import Wrapper from "./components/Wrapper/Wrapper";
 import Modal from "./components/Modal/Modal";
+import OptionsBox from "./components/OptionsBox/OptionsBox";
 
 function App() {
   const optionsArr = ["BTC", "ETH", "BNB", "SOL", "ADA", "DOGE"];
@@ -24,7 +24,6 @@ function App() {
       .then((serverRes) => {
         if (serverRes.data["Error Message"]) {
           setDataArr("");
-          console.log(serverRes.data["Error Message"]);
           return setInvalid(true);
         } else {
           setInvalid(false);
@@ -34,9 +33,6 @@ function App() {
           Object.keys(data).forEach((key, index) => {
             structured.push(data[key]);
           });
-
-          console.log(structured.length);
-
           setDataArr(structured);
         }
       })
@@ -52,17 +48,7 @@ function App() {
       {showModal && <Modal setTicker={setTicker} setShowModal={setShowModal} />}
       <Header setTicker={setTicker} setShowModal={setShowModal} />
       <Wrapper>
-        <article className="article">
-          {optionsArr.map((el, index) => {
-            return (
-              <Options
-                key={`option_${index}`}
-                setTicker={setTicker}
-                value={el}
-              />
-            );
-          })}
-        </article>
+        <OptionsBox optionsArr={optionsArr} setTicker={setTicker} />
         <Selection
           setDiffOnly={setDiffOnly}
           setTrendOnly={setTrendOnly}

@@ -7,6 +7,7 @@ const SearchForm = ({ setTicker }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setTicker(userInput);
+    setUserInput("");
   };
 
   return (

@@ -7,7 +7,7 @@ const Selection = ({ setDiffOnly, setTrendOnly, ticker, invalid }) => {
         <h2 className={classes.h2}>INVALID TICKR</h2>
       ) : (
         <h2 className={classes.h2}>
-          {ticker} {new Date().toLocaleDateString()}
+          {ticker} {new Date().toISOString().slice(5, 10)}
         </h2>
       )}
       <div className={classes.filterBox}>
@@ -22,6 +22,15 @@ const Selection = ({ setDiffOnly, setTrendOnly, ticker, invalid }) => {
         </p>
         <p
           onClick={() => {
+            setTrendOnly(true);
+            setDiffOnly(false);
+          }}
+          className={classes.mobile}
+        >
+          T
+        </p>
+        <p
+          onClick={() => {
             setTrendOnly(false);
             setDiffOnly(true);
           }}
@@ -32,11 +41,30 @@ const Selection = ({ setDiffOnly, setTrendOnly, ticker, invalid }) => {
         <p
           onClick={() => {
             setTrendOnly(false);
+            setDiffOnly(true);
+          }}
+          className={classes.mobile}
+        >
+          D
+        </p>
+
+        <p
+          onClick={() => {
+            setTrendOnly(false);
             setDiffOnly(false);
           }}
           className={classes.p}
         >
           Compound
+        </p>
+        <p
+          onClick={() => {
+            setTrendOnly(false);
+            setDiffOnly(false);
+          }}
+          className={classes.mobile}
+        >
+          C
         </p>
       </div>
     </section>

@@ -21,18 +21,6 @@ body {
   background-color: #080007;
 }
 
-.article {
-  width: 100%;
-  padding: 0 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1em;
-  height: 10vh;
-  margin: 5vh 0;
-}
-
 .material-symbols-outlined {
   color: hsl(327, 100%, 50%);
   font-size: 2em;
@@ -41,9 +29,5 @@ body {
 @media (max-width: 798px) {
   html {
     font-size: 55.5%;
-  }
-  .article {
-    height: 15vh;
-    padding: 0 2.5%;
   }
 }
