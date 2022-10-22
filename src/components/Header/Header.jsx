@@ -1,12 +1,11 @@
-import { useState } from "react";
 import SearchForm from "../SearchForm/SearchForm";
 import classes from "./Header.module.css";
 
-const Header = ({ setTicker, setShowModal }) => {
+const Header = ({ setShowModal }) => {
   return (
     <header className={classes.header}>
       <h1 className={classes.h1}>CRYPTAWARE</h1>
-      <SearchForm setTicker={setTicker} />
+      <SearchForm />
       <button
         className={classes.iconBtn}
         onClick={() => {

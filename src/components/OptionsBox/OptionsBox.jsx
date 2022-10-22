@@ -1,13 +1,12 @@
 import classes from "./OptionsBox.module.css";
 import Options from "../Options/Options";
+import optionsArr from "../../data/data";
 
-const OptionsBox = ({ optionsArr, setTicker }) => {
+const OptionsBox = () => {
   return (
     <article className={classes.article}>
       {optionsArr.map((el, index) => {
-        return (
-          <Options key={`option_${index}`} setTicker={setTicker} value={el} />
-        );
+        return <Options key={`option_${index}`} value={el} />;
       })}
     </article>
   );

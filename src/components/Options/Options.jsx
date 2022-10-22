@@ -1,8 +1,10 @@
 import classes from "./Options.module.css";
+import { useContext } from "react";
+import { TickerCtx } from "../../features/ticker-ctx";
 
-const Options = ({ setTicker, value }) => {
-  const resetTicker = () => setTicker(value);
-
+const Options = ({ value }) => {
+  const tickerMgr = useContext(TickerCtx);
+  const resetTicker = () => tickerMgr.setTicker(value);
   return (
     <button onClick={resetTicker} className={classes.btn}>
       <span className={classes.span}> {value}</span>

@@ -1,12 +1,13 @@
 import classes from "./SearchForm.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TickerCtx } from "../../features/ticker-ctx";
 
-const SearchForm = ({ setTicker }) => {
+const SearchForm = () => {
   const [userInput, setUserInput] = useState("");
-
+  const tickerMgr = useContext(TickerCtx);
   const submitHandler = (e) => {
     e.preventDefault();
-    setTicker(userInput);
+    tickerMgr.setTicker(userInput);
     setUserInput("");
   };
 

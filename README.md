@@ -8,14 +8,17 @@
 - [x] APP: Remove article and wrapper instead
 - [x] APP: create parent for list of buttons
 - [x] SELECTION: Span date or reconfigure to look better overall and responsive
-- [ ] APP: List what states should remain props
-- [ ] APP: Pass reused states to context
+- [x] APP: List what states should remain props
+- [x] APP: Pass reused states to context
 
 # FEATURES (CLIENT ONLY)
 
 - [ ] select or choose month/week/day options
 
-# FEATURES-incomplete (MERN)
+# FEATURES-incomplete-Ideas for (MERN)
 
-- [ ] provide list of available tickers
-- [ ] News or related info
+- [ ] Auth-Encryption-Token
+- [ ] CRUD Tracking records for tickers
+- [ ] Provide list of available tickers
+- [ ] News or related info to spec ticker based on selection
+- [ ] CHALLENGES: Figure out how to work around API call's limit and evaluate if the ideas above are feasable based on it.

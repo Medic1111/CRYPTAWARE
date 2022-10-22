@@ -1,7 +1,11 @@
 import * as R from "recharts";
 import classes from "./Chart.module.css";
+import { useContext } from "react";
+import { SelectionCtx } from "../../features/selection-ctx";
 
-const Chart = ({ data, trendOnly, diffOnly }) => {
+const Chart = ({ data }) => {
+  const selectionMgr = useContext(SelectionCtx);
+
   return (
     <div className={classes.chart}>
       <R.ResponsiveContainer width="100%" height="100%">
@@ -9,7 +13,7 @@ const Chart = ({ data, trendOnly, diffOnly }) => {
           margin={{ top: 25, right: 20, bottom: 5, left: 20 }}
           data={data}
         >
-          {trendOnly || (
+          {selectionMgr.trendOnly || (
             <>
               <R.Line type="monotone" dataKey="1. open" stroke="#0dd936" />
               <R.Line type="monotone" dataKey="4. close" stroke="#d9650d" />
@@ -27,7 +31,7 @@ const Chart = ({ data, trendOnly, diffOnly }) => {
           />
           <R.Tooltip />
           <R.Legend />
-          {diffOnly || (
+          {selectionMgr.diffOnly || (
             <>
               <R.Bar dataKey="3. low" barSize={10} fill="#d90dbe" />
               <R.Bar dataKey="2. high" barSize={10} fill="#0dd9d2" />

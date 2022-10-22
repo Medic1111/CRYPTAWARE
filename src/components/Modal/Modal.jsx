@@ -1,12 +1,14 @@
 import Portal from "../Portal/Portal";
 import classes from "./Modal.module.css";
-import { useState } from "react";
-const Modal = ({ setTicker, setShowModal }) => {
+import { useState, useContext } from "react";
+import { TickerCtx } from "../../features/ticker-ctx";
+const Modal = ({ setShowModal }) => {
+  const tickerMgr = useContext(TickerCtx);
   const [userInput, setUserInput] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setTicker(userInput);
+    tickerMgr.setTicker(userInput);
     setShowModal((prev) => !prev);
   };
 
