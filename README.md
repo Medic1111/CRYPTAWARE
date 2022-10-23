@@ -1,6 +1,9 @@
 # CRYPTAWARE-V-Client_Only (in dev)
 
 ---
+TypeScript version of client-only [here](https://github.com/Medic1111/CRYPTAWARE_TYPESCRYPT_CLIENT)
+
+---
 
 [Dev is live here](https://cryptaware.netlify.app/)
 
